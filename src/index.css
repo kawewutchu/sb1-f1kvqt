@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes flash {
+  0%, 100% { 
+    background-color: rgb(254 249 195); 
+    transform: scale(1);
+  }
+  50% { 
+    background-color: rgb(254 240 138); 
+    transform: scale(1.05);
+  }
+}
+
+.animate-flash {
+  animation: flash 1.5s ease-in-out infinite;
+}
+
+/* Optimize for TV display */
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 18px; /* Increased base font size for TV */
+  }
+}
+
+/* Prevent text selection on TV display */
+* {
+  user-select: none;
+  -webkit-user-select: none;
+}
